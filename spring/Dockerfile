@@ -13,7 +13,7 @@ RUN cd /spring && git clone https://github.com/spring-projects/spring-petclinic.
 
 RUN cd spring-petclinic && ./mvnw package
 
-RUN /bin/echo -e '#!/bin/bash \n java -jar /spring/spring-petclinic/target/*.jar & \n sleep 5 \n ' > /spring/run.sh
+RUN /bin/echo -e '#!/bin/bash \n java -jar /spring/spring-petclinic/target/*.jar  \n sleep 5 \n ' > /spring/run.sh
 RUN chmod +x /spring/run.sh
 
 ENTRYPOINT /spring/run.sh
